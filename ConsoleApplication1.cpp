@@ -74,7 +74,6 @@ int main()
    {
 	   cout << "Write your new task: " ;
 	   getline(cin, taskgirdisi);
-	   taskgirdileri.push_back(taskgirdisi);
 	   continue;
    }
    if (secim == 2) // Bir task'i silme
@@ -95,7 +94,7 @@ int main()
 		   continue;
 	   }
 	   taskgirdileri.erase(taskgirdileri.begin() + silmesecimi - 1);
-
+	   cout << "Successfully updated." << endl;
 	   continue;
    }
    if (secim == 3) // Bir task'i güncelleme
@@ -120,17 +119,18 @@ int main()
 	   string updatedtask;
 	   getline(cin,updatedtask);
 	   taskgirdileri[updatesecimi - 1 ] = updatedtask;
-	   cout << "Successfully updated.";
+	   cout << "Successfully updated." <<endl;
 	   continue;
    }	   
    if (secim == 4) //Taskleri görüntüleme
    {
 	   listElements(taskgirdileri);
+   
 	   continue;
    }
    if (secim == 5) // Programı bitirme & çıkış
    {
-	   cout << "Program kapaniyor \n";
+	   cout << "Program is closing... \n";
 	   file.open("MyTodoList.txt", ios::out); //out override için, app eklemek için
 	   if (file.is_open())
 	   {
